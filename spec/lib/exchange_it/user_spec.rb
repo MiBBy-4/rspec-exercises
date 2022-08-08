@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Method describe from RSpec module says that in block will appear tests
 # Usually one describe cover one class or one feature
 RSpec.describe ExchangeIt::User do
