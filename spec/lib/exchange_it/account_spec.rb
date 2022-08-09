@@ -9,6 +9,6 @@ RSpec.describe ExchangeIt::Account do
   it 'has proper uid' do
     expect(john.uid).to be_an_instance_of(String)
     hash = john.hash 'John', 'Doe'
-    expect(john.uid).to eq(hash) 
+    expect(john.uid).to eq(hash)
   end
 end
