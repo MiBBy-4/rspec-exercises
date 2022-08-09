@@ -1,7 +1,7 @@
 module ExchangeIt
-  class NotEnoughFunds < StandartError
+  class NotEnoughFunds < StandardError
   end
 
-  class IncorrectSum < StandartError
+  class IncorrectSum < StandardError
   end
 end
