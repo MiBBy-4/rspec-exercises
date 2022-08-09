@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ExchangeIt
   class Account
     include ExchangeIt::Utils::Uid
@@ -17,6 +19,7 @@ module ExchangeIt
     def withdraw(amount)
       raise(ExchangeIt::IncorrectSum, 'Amount must be positive!') unless amount.positive?
       raise(ExchangeIt::NotEnoughFunds, "Available: #{@balance} but tried to withdraw #{amount}") if amount > @balance
+
       @balance -= amount
     end
 

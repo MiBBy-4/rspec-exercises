@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe ExchangeIt::Account do
   let(:user_class) { Struct.new(:name, :surname) }
   let(:john) { described_class.new(user_class.new('John', 'Doe')) }
@@ -16,7 +18,7 @@ RSpec.describe ExchangeIt::Account do
   describe '#deposit' do
     it 'allows to deposit correct sum' do
       john.deposit 100
-      expect(john.balance).to eq(100) 
+      expect(john.balance).to eq(100)
     end
 
     it 'does not allow to deposit a negative sum' do
@@ -29,7 +31,8 @@ RSpec.describe ExchangeIt::Account do
   end
 
   context 'when performing money withdrawal' do
-    before(:each) { john.deposit 100 }
+    before { john.deposit 100 }
+
     specify '#transfer' do
       expect(ann.balance).to eq(0)
 

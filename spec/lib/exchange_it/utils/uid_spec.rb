@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 RSpec.describe ExchangeIt::Utils::Uid do
   let(:dummy) { Class.new { include ExchangeIt::Utils::Uid }.new }
 
   describe '#hash' do
     it 'returns nil when no args were given' do
-      expect(dummy.hash).to be_nil 
+      expect(dummy.hash).to be_nil
     end
 
     it 'returns string when at least 1 arg was given' do
