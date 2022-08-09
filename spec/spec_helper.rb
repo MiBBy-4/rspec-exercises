@@ -6,7 +6,7 @@ require_relative '../lib/exchange_it'
 # Configure rspec
 RSpec.configure do |config|
   # Add metadata in all files in exchange_it/utils folder
-  config.define_derived_metadata(file_path: /exchange_it\/utils/) do |meta|
+  config.define_derived_metadata(file_path: %r{exchange_it/utils}) do |meta|
     meta[:utils] = true
   end
 
