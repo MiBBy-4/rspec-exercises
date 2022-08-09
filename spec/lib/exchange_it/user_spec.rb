@@ -4,23 +4,24 @@
 # Usually one describe cover one class or one feature
 RSpec.describe ExchangeIt::User do
   # Let declares variable for all tests in block of code
-  let(:user) { described_class.new 'John', 'Doe' }
-  let(:user_no_name) { described_class.new nil, nil }
+  # Also in let we can catch metadata and use it
+  let(:user) { |ex| described_class.new(ex.metadata[:name] || 'John', ex.metadata[:surname] || 'Doe') }
 
   it 'returns name' do
     expect(user.name).to eq('John')
   end
 
-  it 'returns name as a string' do
-    expect(user_no_name.name).to be_an_instance_of(String)
+  # We can throw metadata like an arguments
+  it 'returns name as a string', name: nil do
+    expect(user.name).to be_an_instance_of(String)
   end
 
   it 'returns surname' do
     expect(user.surname).to eq('Doe')
   end
 
-  it 'returns surname as a string' do
-    expect(user_no_name.surname).to be_an_instance_of(String)
+  it 'returns surname as a string', surname: nil do
+    expect(user.surname).to be_an_instance_of(String)
   end
 
   # There are three methods in RSpec to test: specify, it and example.

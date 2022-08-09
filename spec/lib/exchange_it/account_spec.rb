@@ -5,7 +5,7 @@ RSpec.describe ExchangeIt::Account do
   let(:john) { described_class.new(user_class.new('John', 'Doe')) }
   let(:ann) { described_class.new(user_class.new('Ann', 'Smith')) }
 
-  it 'has zero balance by default' do
+  it 'has zero balance by default', :win_only do
     expect(john.balance).to eq(0)
   end
 
