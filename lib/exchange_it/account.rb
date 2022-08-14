@@ -3,7 +3,7 @@
 module ExchangeIt
   class Account
     include ExchangeIt::Utils::Uid
-    include ExchangeIt::Api::Converter
+    include ExchangeIt::ApiOld::Converter
 
     attr_reader :uid, :balance
 

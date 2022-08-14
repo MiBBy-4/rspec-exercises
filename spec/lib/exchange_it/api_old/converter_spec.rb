@@ -1,7 +1,7 @@
-RSpec.describe ExchangeIt::Api::Converter do
+RSpec.describe ExchangeIt::ApiOld::Converter do
   specify '#convert' do
     # There is a double of Converter module with convert method that returns 100
-    converter_stub = instance_double ExchangeIt::Api::Converter#, convert: 100
+    converter_stub = instance_double ExchangeIt::ApiOld::Converter#, convert: 100
 
     # expect(converter_stub).to receive(:convert).with(sum: 80)
 

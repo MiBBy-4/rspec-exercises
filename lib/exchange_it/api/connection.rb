@@ -4,7 +4,7 @@ module ExchangeIt
       BASE_URL = 'https://api.lokalise.com/api2/'
 
       def connection(client)
-        Faraday.new(opyions(client)) do |faraday|
+        Faraday.new(options(client)) do |faraday|
           faraday.adapter Faraday.default_adapter
         end
       end

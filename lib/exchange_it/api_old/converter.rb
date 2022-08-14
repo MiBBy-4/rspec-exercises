@@ -1,5 +1,5 @@
 module ExchangeIt
-  module Api
+  module ApiOld
     module Converter
       def convert(sum:, from: :usd, to: :eur)
         # TODO
