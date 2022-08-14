@@ -7,7 +7,7 @@ module ExchangeIt
         get "projects/#{project_id}", self
       end
 
-      def project(params = {})
+      def projects(params = {})
         get 'projects', self, params
       end
 

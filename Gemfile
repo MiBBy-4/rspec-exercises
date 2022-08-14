@@ -2,7 +2,7 @@
 
 source 'http://rubygems.org'
 
-gem 'faraday'
+gem 'faraday', '~> 2'
 
 group :test do
   gem 'rspec'

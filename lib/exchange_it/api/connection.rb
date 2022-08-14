@@ -15,7 +15,7 @@ module ExchangeIt
         {
           headers: {
             accept: 'application/json',
-            user_agent: "ruby-client",
+            user_agent: 'ruby-client',
             'X-Api-Token' => client.token
           },
           url: BASE_URL
