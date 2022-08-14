@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 
 module ExchangeIt
@@ -20,7 +22,7 @@ module ExchangeIt
       private
 
       def respond_with(response)
-        JSON.load response.body
+        JSON.parse response.body
       end
     end
   end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 RSpec.describe ExchangeIt::Api::Client do
-  let(:test_client) { described_class.new(ENV.fetch('LOKALISE_API_TOKEN') { 'fake' }) }
+  let(:test_client) { described_class.new(ENV.fetch('LOKALISE_API_TOKEN', 'fake')) }
   let(:project_id) { '123.abc' }
 
   specify '#project' do
@@ -27,7 +29,7 @@ RSpec.describe ExchangeIt::Api::Client do
     body = JSON.dump(
       [
         {
-          name: 'Project 1',
+          name: 'Project 1'
         },
         {
           name: 'Project 2'
@@ -35,9 +37,9 @@ RSpec.describe ExchangeIt::Api::Client do
       ]
     )
 
-    stub = stub_request(:get, 'https://api.lokalise.com/api2/projects').
-      with(query: { page: 2, limit: 3 }).
-      to_return(status: 200, body: body)
+    stub = stub_request(:get, 'https://api.lokalise.com/api2/projects')
+           .with(query: { page: 2, limit: 3 })
+           .to_return(status: 200, body: body)
 
     projects = test_client.projects page: 2, limit: 3
     expect(projects.length).to eq(2)
@@ -51,7 +53,7 @@ RSpec.describe ExchangeIt::Api::Client do
     it 'creates project with proper params' do
       body = JSON.dump({ name: 'RSpec', description: 'Sample' })
 
-      stub = stub_request(:post, 'https://api.lokalise.com/api2/projects').with(
+      stub_request(:post, 'https://api.lokalise.com/api2/projects').with(
         body: body
       ).to_return(status: 200, body: body)
 
@@ -61,9 +63,9 @@ RSpec.describe ExchangeIt::Api::Client do
     end
 
     it 'raises an error with invalid params' do
-      stub = stub_request(:post, 'https://api.lokalise.com/api2/projects').to_raise(StandardError)
+      stub_request(:post, 'https://api.lokalise.com/api2/projects').to_raise(StandardError)
 
-      expect { test_client.create_project({}) }.to raise_error(StandardError)  
+      expect { test_client.create_project({}) }.to raise_error(StandardError)
     end
   end
 end
