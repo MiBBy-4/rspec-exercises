@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # This file is used for require all Modules, File, Environments, Support files and etc for testing
+require 'dotenv/load'
+require 'webmock/rspec'
 require_relative '../lib/exchange_it'
 
 # Configure rspec
