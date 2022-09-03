@@ -54,6 +54,7 @@ GEM
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     unicode-display_width (2.2.0)
+    vcr (6.1.0)
     webmock (3.17.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -69,6 +70,7 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rspec
+  vcr
   webmock
 
 BUNDLED WITH

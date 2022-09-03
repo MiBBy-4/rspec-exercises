@@ -7,6 +7,7 @@ gem 'faraday', '~> 2'
 group :test do
   gem 'rspec'
   gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
