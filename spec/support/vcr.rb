@@ -9,7 +9,7 @@ VCR.configure do |config|
   config.cassette_library_dir = File.join(
     File.dirname(__FILE__), '..', 'fixture', 'vcr_cassettes'
   )
-  config.filter_sensitive_data('<LOKALIZE_API_TOKEN>') {
-    ENV.fetch('LOKALIZE_API_TOKEN', 'hidden')
+  config.filter_sensitive_data('<LOKALISE_API_TOKEN>') {
+    ENV.fetch('LOKALISE_API_TOKEN', 'hidden')
   }
 end
